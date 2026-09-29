@@ -1,17 +1,15 @@
 # HW03: Intro to Variables in p5.js — AI Transcript
 
+
 ## Question 1
 
 **What is the bare minimum I should know about how computer memory works to understand variables in a programming language?**
 
-Think of computer memory as a huge wall of **labeled boxes**. Each box can hold one value. A **variable** is just a named box: the name is the label on the outside, and the value is whatever's currently stored inside.
+Every piece of data in a running program has to physically live somewhere inside the computer's memory (RAM), and RAM is really just an enormous numbered list of storage slots. A **variable** is a human-readable nickname your code uses so *you* don't have to remember the actual numeric slot number.
 
-Two key ideas:
+When `let bard = 3020;` runs, it's really saying: "find an open slot, put 3020 in it, and from now on let me refer to that slot by the name `bard` instead of its numeric address."
 
-- You can **look at** what's in the box (use the variable) without changing it.
-- You can **replace** what's in the box (reassign the variable) — the old value is gone, overwritten by the new one.
-
-That's really it for the "bare minimum" — a variable is a labeled, reusable storage spot, and its contents can change while your program runs.
+That's the bare minimum: memory is addressed by number, and variables are the friendly names that stand in for those addresses — letting you read or update the value at that address just by using its name.
 
 ---
 
@@ -22,7 +20,7 @@ That's really it for the "bare minimum" — a variable is a labeled, reusable st
 This **declares** (creates) a new variable named `bard` and immediately stores the value `3020` in it.
 
 - `let` — the keyword that tells p5.js/JavaScript "I'm creating a new variable."
-- `bard` — the variable's name (the label on the box).
+- `bard` — the variable's name.
 - `= 3020` — sets its starting value to 3020.
 - `;` — ends the statement.
 
@@ -105,11 +103,10 @@ Tracing through it line by line:
 **Write for me the simplest program that defines a variable and uses it to create vertical motion in p5.js.**
 
 ```javascript
-let y; // declared here so both setup() and draw() can use it
+let y = 0; // declare and give a starting value for y
 
 function setup() {
   createCanvas(400, 400);
-  y = 0; // starting position
 }
 
 function draw() {
