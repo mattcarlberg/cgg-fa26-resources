@@ -292,10 +292,12 @@ Two rules to remember:
 
 | Part | Command | Why |
 |---|---|---|
-| Head | `circle(fx, fy, 60)` | centered exactly at (fx, fy) |
-| Left eye | `circle(fx - 10, fy - 5, 7)` | 10 left (minus), 5 up (minus) |
-| Right eye | `circle(fx + 10, fy - 5, 7)` | 10 right (plus), 5 up (minus) |
+| Head | `ellipse(fx, fy, 60, 60)` | centered exactly at (fx, fy) |
+| Left eye | `ellipse(fx - 10, fy - 5, 7, 7)` | 10 left (minus), 5 up (minus) |
+| Right eye | `ellipse(fx + 10, fy - 5, 7, 7)` | 10 right (plus), 5 up (minus) |
 | Mouth | `line(fx - 15, fy + 15, fx + 15, fy + 15)` | 30 wide means 15 on each side; 15 down (plus) |
+
+An `ellipse` needs a **width and a height**: `ellipse(x, y, width, height)`. For a circle, make them the same number.
 
 A `line` needs **two endpoints**: `line(x1, y1, x2, y2)`. The mouth is horizontal, so both endpoints have the same y.
 
@@ -303,9 +305,9 @@ A `line` needs **two endpoints**: `line(x1, y1, x2, y2)`. The mouth is horizonta
 
 ```javascript
 function drawFace(fx, fy) {
-  circle(fx, fy, 60);
-  circle(fx - 10, fy - 5, 7);
-  circle(fx + 10, fy - 5, 7);
+  ellipse(fx, fy, 60, 60);
+  ellipse(fx - 10, fy - 5, 7, 7);
+  ellipse(fx + 10, fy - 5, 7, 7);
   line(fx - 15, fy + 15, fx + 15, fy + 15);
 }
 ```
