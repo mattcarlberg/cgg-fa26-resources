@@ -32,21 +32,9 @@ function draw() {
 }
 ```
 
-Each line inside `draw()` **calls** the `house()` function with different **arguments**. The first number becomes `hx` and the second becomes `hy`.
+Each line **calls** `house()` with different **arguments**. The first number becomes `hx` and the second becomes `hy`.
 
-**How to pick the numbers:** Before choosing arguments, look *inside* the function to see what `hx` and `hy` actually mean.
-
-- `rect(hx, hy, 60, 60)` means (hx, hy) is the **top-left corner** of the house's body. The body stretches **60 pixels right** and **60 pixels down** from there.
-- The `triangle` puts the roof peak at `hy - 30`, so the roof sticks up **30 pixels above** `hy`.
-
-That means for a house to fit completely on a 400×400 canvas:
-
-| Value | Smallest | Largest | Why |
-|---|---|---|---|
-| hx | 0 | 340 | the body is 60 wide, and 400 − 60 = 340 |
-| hy | 30 | 340 | the roof needs 30 pixels above; the body needs 60 below |
-
-**Common mistake:** Calling `house(100, 0)`. The body shows up, but the roof is at y = −30, which is off the top of the canvas.
+**Tip:** (hx, hy) is the **top-left corner** of the house's body, and the roof sticks up **30 pixels above** it. So `hy` must be at least 30, or the roof goes off the top of the canvas.
 
 ---
 
@@ -75,13 +63,7 @@ function house(hx, hy) {
 }
 ```
 
-1. **A variable outside of `draw()`.** This variable remembers the house's position from one frame to the next.
-2. **Pass the variable into the function.** Instead of a fixed number like `50`, the x argument is now `hx`, so the house is drawn wherever `hx` currently is.
-3. **Update the variable.** Adding 2 each frame moves the house 2 pixels to the right every time `draw()` runs.
-
-Keep `background()` at the top of `draw()`. It paints over the old house each frame. Without it, you'd see a smeared trail of houses.
-
-**Common mistake:** Writing `let hx = 0;` *inside* `draw()`. Then `hx` gets reset to 0 at the start of every frame, so the house never moves.
+**Common mistake:** Writing `let hx = 0;` *inside* `draw()`. Then `hx` resets to 0 every frame, so the house never moves.
 
 ---
 
