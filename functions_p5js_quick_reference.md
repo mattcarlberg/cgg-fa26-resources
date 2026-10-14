@@ -1,6 +1,8 @@
+# Functions in p5.js: Quick Guide
+
 Creating custom functions makes your sketch modular, easier to debug, and allows you to reuse code without rewriting it.
 
-1. Basic Function Syntax
+## 1. Basic Function Syntax
 
 A custom function is built using the function keyword, a descriptive name, parentheses, and curly brackets containing the body of your code: 
 
@@ -10,7 +12,7 @@ function nameOfFunction() {
 }
 ```
 
-2. A Simple Step-by-Step Example
+## 2. A Simple Step-by-Step Example
 
 Unlike built-in p5.js functions like `setup()` and `draw()` which run automatically, you must explicitly call your custom functions to execute them. 
 
@@ -43,7 +45,7 @@ function drawHappyFace() {
 ```
 
 
-3. Adding Parameters (Passing Inputs)
+## 3. Adding Parameters (Passing Inputs)
 
 To make your function flexible, you can add parameters inside the parentheses. Parameters act like local placeholder variables that let you customize the function every time you call it. 
 
@@ -74,7 +76,7 @@ function drawCustomFlower(x, y, diameter) {
 }
 ```
 
-4. Returning Values
+## 4. Returning Values
 
 Functions can also calculate a value and send it back to whoever called it using the return statement. 
 
@@ -95,7 +97,7 @@ function calculateMiddle(num1, num2) {
 }
 ```
 
-Best Practices 💡
+## Best Practices 
 
 * Naming: Use camelCase for your function names (e.g., drawSpookyGhost, checkCollision). 
 * Placement: Define your custom functions outside of setup() or draw(), usually at the very bottom of your sketch.js file. 
