@@ -205,8 +205,12 @@ This draws 10 circles that follow your mouse up and down. The for loop handles *
 ```javascript
 let x = 400;
 
+function setup() {
+  createCanvas(400, 400); 
+}
+
 function draw() {
-  background(220);
+  background("lightgray");
   rect(x, 175, 50, 50);
   x = x - 2;
 }
